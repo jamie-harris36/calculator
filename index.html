@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Take-Home Pay Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>PAYE Take-Home Pay Calculator</h1>
+        <div class="form-group">
+            <label for="gross-income">Annual Gross Salary (£):</label>
+            <input type="number" id="gross-income" name="gross-income" placeholder="Enter your gross salary...">
+            <button id="calculate-button">Calculate</button>
+        </div>
+        <table id="results">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Yearly</th>
+                    <th>Monthly</th>
+                    <th>Weekly</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gross Income</td>
+                    <td id="gross-yearly"></td>
+                    <td id="gross-monthly"></td>
+                    <td id="gross-weekly"></td>
+                </tr>
+                <tr>
+                    <td>Personal Allowance</td>
+                    <td id="personal-allowance-yearly"></td>
+                    <td id="personal-allowance-monthly"></td>
+                    <td id="personal-allowance-weekly"></td>
+                </tr>
+                <tr>
+                    <td>Taxable Income</td>
+                    <td id="taxable-yearly"></td>
+                    <td id="taxable-monthly"></td>
+                    <td id="taxable-weekly"></td>
+                </tr>
+                <tr>
+                    <td>Income Tax</td>
+                    <td id="tax-yearly"></td>
+                    <td id="tax-monthly"></td>
+                    <td id="tax-weekly"></td>
+                </tr>
+                <tr>
+                    <td>National Insurance</td>
+                    <td id="ni-yearly"></td>
+                    <td id="ni-monthly"></td>
+                    <td id="ni-weekly"></td>
+                </tr>
+                <tr>
+                    <td>Take-Home Pay</td>
+                    <td id="take-home-yearly"></td>
+                    <td id="take-home-monthly"></td>
+                    <td id="take-home-weekly"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div> 
+    <script src="assets/javascript/script.js"></script>
+</body>
+</html>

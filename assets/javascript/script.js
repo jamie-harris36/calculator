@@ -7,9 +7,15 @@ function calculateTakeHomePay() {
         return;
     }
 
-    
+
     // Personal Allowance
     let personalAllowance = 12570;
+
+
+    // Code to calculate taxable income
+    let taxableIncome = Math.max(grossIncome - personalAllowance, 0);
+    let incomeTax = 0;
+    let nationalInsurance = 0;
 
 
     // Income tax brackets

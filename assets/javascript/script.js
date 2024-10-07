@@ -12,6 +12,22 @@ function calculateTakeHomePay() {
     let personalAllowance = 12570;
 
 
+    // Code to deduct £1 from personal allowance for every £2 over £100,000 earned
+
+        // If salary is over £100,000
+    if (grossIncome > 100000) {
+
+        // Subtract £100,000 from salary to get excess income
+        let excessIncome = grossIncome - 100000;
+
+        // Divide excess income by 2
+        let allowanceReduction = excessIncome / 2;
+
+        // Now subtract the reduction from the personal allowance. The '0' ensures the amount can't go below 0.
+        personalAllowance = Math.max(personalAllowance - allowanceReduction, 0);
+    }
+
+
     // Code to calculate taxable income
     let taxableIncome = Math.max(grossIncome - personalAllowance, 0);
     let incomeTax = 0;

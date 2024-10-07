@@ -96,4 +96,18 @@ td:first-child {
 .hidden {
     display: none;
     opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.visible {
+    animation: fade-in 750ms forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

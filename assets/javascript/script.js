@@ -43,4 +43,19 @@ function calculateTakeHomePay() {
         ((higherRateLimit - basicRateLimit) * 0.40) + 
         ((grossIncome - higherRateLimit) * 0.45);
     }
+
+
+    // Code to calculate National Insurance (simplified)
+
+        // If salary is more than £12,570
+    if (grossIncome > 12570) {
+        // National Insurance is 8% of salary between £12,570 and £50,270
+        nationalInsurance = Math.min(grossIncome - personalAllowance, basicRateLimit - personalAllowance) * 0.08;
+
+        // If salary is more than £50,270
+        if (grossIncome > 50270) {
+        // National Insurance is 8% of salary between £12,570 and £50,270, and 2% of salary above that
+            nationalInsurance += (grossIncome - basicRateLimit) * 0.02;
+        }
+    }
 }

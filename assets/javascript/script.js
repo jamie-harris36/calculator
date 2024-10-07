@@ -58,4 +58,8 @@ function calculateTakeHomePay() {
             nationalInsurance += (grossIncome - basicRateLimit) * 0.02;
         }
     }
+
+    
+    // Code to calculate Take-Home pay
+    const takeHomePay = grossIncome - incomeTax - nationalInsurance;
 }

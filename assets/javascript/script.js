@@ -66,14 +66,20 @@ function calculateTakeHomePay() {
 
     // Code to display yearly, monthly and weekly values on the table
     document.getElementById('gross-yearly').textContent = (grossIncome);
+    document.getElementById('gross-monthly').textContent = (grossIncome / 12);
 
     document.getElementById('personal-allowance-yearly').textContent = (personalAllowance);
+    document.getElementById('personal-allowance-monthly').textContent = (personalAllowance / 12);
 
     document.getElementById('taxable-yearly').textContent = (taxableIncome);
+    document.getElementById('taxable-monthly').textContent = (taxableIncome / 12);
 
     document.getElementById('tax-yearly').textContent = (incomeTax);
+    document.getElementById('tax-monthly').textContent = (incomeTax / 12);
 
     document.getElementById('ni-yearly').textContent = (nationalInsurance);
+    document.getElementById('ni-monthly').textContent = (nationalInsurance / 12);
 
     document.getElementById('take-home-yearly').textContent = (takeHomePay);
+    document.getElementById('take-home-monthly').textContent = (takeHomePay / 12);
 }

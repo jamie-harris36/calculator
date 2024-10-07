@@ -81,27 +81,31 @@ function calculateTakeHomePay() {
 
 
     // Code to display yearly, monthly and weekly values on the table
-    document.getElementById('gross-yearly').textContent = (grossIncome);
-    document.getElementById('gross-monthly').textContent = (grossIncome / 12);
-    document.getElementById('gross-weekly').textContent = (grossIncome / 52);
+    document.getElementById('gross-yearly').textContent = formatCurrency(grossIncome);
+    document.getElementById('gross-monthly').textContent = formatCurrency(grossIncome / 12);
+    document.getElementById('gross-weekly').textContent = formatCurrency(grossIncome / 52);
 
-    document.getElementById('personal-allowance-yearly').textContent = (personalAllowance);
-    document.getElementById('personal-allowance-monthly').textContent = (personalAllowance / 12);
-    document.getElementById('personal-allowance-weekly').textContent = (personalAllowance / 52);
+    document.getElementById('personal-allowance-yearly').textContent = formatCurrency(personalAllowance);
+    document.getElementById('personal-allowance-monthly').textContent = formatCurrency(personalAllowance / 12);
+    document.getElementById('personal-allowance-weekly').textContent = formatCurrency(personalAllowance / 52);
 
-    document.getElementById('taxable-yearly').textContent = (taxableIncome);
-    document.getElementById('taxable-monthly').textContent = (taxableIncome / 12);
-    document.getElementById('taxable-weekly').textContent = (taxableIncome / 52);
+    document.getElementById('taxable-yearly').textContent = formatCurrency(taxableIncome);
+    document.getElementById('taxable-monthly').textContent = formatCurrency(taxableIncome / 12);
+    document.getElementById('taxable-weekly').textContent = formatCurrency(taxableIncome / 52);
 
-    document.getElementById('tax-yearly').textContent = (incomeTax);
-    document.getElementById('tax-monthly').textContent = (incomeTax / 12);
-    document.getElementById('tax-weekly').textContent = (incomeTax / 52);
+    document.getElementById('tax-yearly').textContent = formatCurrency(incomeTax);
+    document.getElementById('tax-monthly').textContent = formatCurrency(incomeTax / 12);
+    document.getElementById('tax-weekly').textContent = formatCurrency(incomeTax / 52);
 
-    document.getElementById('ni-yearly').textContent = (nationalInsurance);
-    document.getElementById('ni-monthly').textContent = (nationalInsurance / 12);
-    document.getElementById('ni-weekly').textContent = (nationalInsurance / 52);
+    document.getElementById('ni-yearly').textContent = formatCurrency(nationalInsurance);
+    document.getElementById('ni-monthly').textContent = formatCurrency(nationalInsurance / 12);
+    document.getElementById('ni-weekly').textContent = formatCurrency(nationalInsurance / 52);
 
-    document.getElementById('take-home-yearly').textContent = (takeHomePay);
-    document.getElementById('take-home-monthly').textContent = (takeHomePay / 12);
-    document.getElementById('take-home-weekly').textContent = (takeHomePay / 52);
+    document.getElementById('take-home-yearly').textContent = formatCurrency(takeHomePay);
+    document.getElementById('take-home-monthly').textContent = formatCurrency(takeHomePay / 12);
+    document.getElementById('take-home-weekly').textContent = formatCurrency(takeHomePay / 52);
+}
+
+function formatCurrency(number) {
+    return '£' + number.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2});
 }

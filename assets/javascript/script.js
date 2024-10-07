@@ -62,4 +62,18 @@ function calculateTakeHomePay() {
     
     // Code to calculate Take-Home pay
     const takeHomePay = grossIncome - incomeTax - nationalInsurance;
+
+
+    // Code to display yearly, monthly and weekly values on the table
+    document.getElementById('gross-yearly').textContent = (grossIncome);
+
+    document.getElementById('personal-allowance-yearly').textContent = (personalAllowance);
+
+    document.getElementById('taxable-yearly').textContent = (taxableIncome);
+
+    document.getElementById('tax-yearly').textContent = (incomeTax);
+
+    document.getElementById('ni-yearly').textContent = (nationalInsurance);
+
+    document.getElementById('take-home-yearly').textContent = (takeHomePay);
 }

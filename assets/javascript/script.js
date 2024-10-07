@@ -104,6 +104,8 @@ function calculateTakeHomePay() {
     document.getElementById('take-home-yearly').textContent = formatCurrency(takeHomePay);
     document.getElementById('take-home-monthly').textContent = formatCurrency(takeHomePay / 12);
     document.getElementById('take-home-weekly').textContent = formatCurrency(takeHomePay / 52);
+
+    document.getElementById('results').classList.remove('hidden');
 }
 
 function formatCurrency(number) {

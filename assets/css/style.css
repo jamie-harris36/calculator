@@ -92,3 +92,8 @@ td:first-child {
     font-weight: 500;
     width: 31%;
 }
+
+.hidden {
+    display: none;
+    opacity: 0;
+}

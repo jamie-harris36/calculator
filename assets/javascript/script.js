@@ -1,5 +1,39 @@
-// Code to link the calculate button to the function to calculate the 'Take-Home Pay'
+// Event listener for the calculate button to perform tax calculations
 document.getElementById('calculate-button').addEventListener('click', calculateTakeHomePay);
+
+
+// Event listener for the tax breakdown link to open the modal
+document.getElementById('tax-breakdown').addEventListener('click', function(event) {
+    event.preventDefault();
+    showModal();
+});
+
+
+// Event listener to close the modal when the 'x' button is clicked
+document.getElementsByClassName('close')[0].addEventListener('click', closeModal);
+
+
+// Event listener to close the modal when clicking outside the modal
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('tax-modal');
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+
+
+// Code to show the modal when the 'Breakdown' link is clicked
+function showModal() {
+    const modal = document.getElementById('tax-modal');
+    modal.style.display = 'block';
+}
+
+
+// Code to close the modal
+function closeModal() {
+    const modal = document.getElementById('tax-modal');
+    modal.style.display = 'none';
+}
 
 
 // Code to configure the 'Take-Home Pay' calculation function

@@ -47,11 +47,11 @@ function calculateTakeHomePay() {
     // Code to combine all following functions together to create the main function
     let personalAllowance = calculatePersonalAllowance(grossIncome);
     let taxableIncome = calculateTaxableIncome(grossIncome, personalAllowance);
-    let incomeTax = calculateIncomeTax(grossIncome, taxableIncome, personalAllowance);
+    let incomeTaxBreakdown = calculateIncomeTax(grossIncome, taxableIncome, personalAllowance);
     let nationalInsurance = calculateNationalInsurance(grossIncome);
-    let takeHomePay = calculateTakeHomePayAmount(grossIncome, incomeTax, nationalInsurance);
+    let takeHomePay = calculateTakeHomePayAmount(grossIncome, incomeTaxBreakdown.totalTax, nationalInsurance);
 
-    displayResults(grossIncome, personalAllowance, taxableIncome, incomeTax, nationalInsurance, takeHomePay);
+    displayResults(grossIncome, personalAllowance, taxableIncome, incomeTaxBreakdown.totalTax, nationalInsurance, takeHomePay);
 }
 
 
@@ -77,7 +77,7 @@ function calculatePersonalAllowance(grossIncome) {
 
 // Code to calculate taxable income
 function calculateTaxableIncome(grossIncome, personalAllowance) {
-    return   Math.max(grossIncome - personalAllowance, 0);
+    return Math.max(grossIncome - personalAllowance, 0);
 }
 
 
@@ -85,29 +85,39 @@ function calculateTaxableIncome(grossIncome, personalAllowance) {
 function calculateIncomeTax(grossIncome, taxableIncome, personalAllowance) {
     const basicRateLimit = 50270;
     const higherRateLimit = 125140;
-    let incomeTax = 0;
+    let basicRateTax = 0; 
+    let higherRateTax = 0;
+    let additionalRateTax = 0;
 
-    // If salary is less than or equal to £50,270
-    if (grossIncome <= basicRateLimit) {
-        // Then taxable income is taxed at 20%
-        incomeTax = taxableIncome * 0.20;
+    // If salary is more than £125,140
+    if (grossIncome > higherRateLimit) {
+        // Income between £0 and £50,270 is taxed at 20%
+        basicRateTax = Math.min(basicRateLimit - personalAllowance, taxableIncome) * 0.20;
+        // Income between £50,271 and £125,140 is taxed at 40%
+        higherRateTax = (higherRateLimit - basicRateLimit) * 0.40;
+        // Income of £125,141 and over is taxed at 45%
+        additionalRateTax = (grossIncome - higherRateLimit) * 0.45;
+    
+    // If salary is more than £50,270 but less than or equal to £125,140
+    } else if (grossIncome > basicRateLimit) {
+        // Income between personal allowance (refer to personal allowance function if over £100,000) and £50,270 is taxed at 20%
+        basicRateTax = Math.min(basicRateLimit - personalAllowance, taxableIncome) * 0.20;
+        // Income between £50,271 and £125,140 is taxed at 40%
+        higherRateTax = (grossIncome - basicRateLimit) * 0.40;
 
-        // If salary is less than or equal to £125,140
-    } else if (grossIncome <= higherRateLimit) {
-        // Then taxable income is taxed at 20% of £37,700 (£50,270 - £12,570 tax-free allowance), + 40% of remaining income.
-        incomeTax = ((basicRateLimit - personalAllowance) * 0.20) + 
-        ((grossIncome - basicRateLimit) * 0.40);
-
-        // If salary is more than £125,140
+    // If salary is more than £12,570 but less than or equal to £50,270
     } else {
-        // Then taxable income is taxed at 20% of £37,700, + 40% of income between £50,270 and £125,140, and 45% of remaining income.
-        incomeTax = ((basicRateLimit - personalAllowance) * 0.20) + 
-        ((higherRateLimit - basicRateLimit) * 0.40) + 
-        ((grossIncome - higherRateLimit) * 0.45);
+        // Income between £12,571 and £50,270 is taxed at 20%
+        basicRateTax = taxableIncome * 0.20;
     }
-    return incomeTax;
+    return {
+        basicRateTax: basicRateTax,
+        higherRateTax: higherRateTax,
+        additionalRateTax: additionalRateTax,
+        totalTax: basicRateTax + higherRateTax + additionalRateTax
+    };
 }
-
+    
 
 // Code to calculate National Insurance (simplified)
 function calculateNationalInsurance(grossIncome) {

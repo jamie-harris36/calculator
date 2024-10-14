@@ -7,6 +7,25 @@
     <title>Take-Home Pay Calculator</title>
 </head>
 <body>
+    <div id="tax-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tax Breakdown</h2>
+            <table id="taxBreakdownTable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Yearly</th>
+                        <th>Monthly</th>
+                        <th>Weekly</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
     <div class="container">
         <h1>PAYE Take-Home Pay Calculator</h1>
         <div class="form-group">
@@ -43,7 +62,9 @@
                     <td id="taxable-weekly"></td>
                 </tr>
                 <tr>
-                    <td>Income Tax</td>
+                    <td>Income Tax
+                        <a href="#" id="tax-breakdown">Breakdown</a>
+                    </td>
                     <td id="tax-yearly"></td>
                     <td id="tax-monthly"></td>
                     <td id="tax-weekly"></td>

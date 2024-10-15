@@ -121,7 +121,7 @@ function calculateIncomeTax(grossIncome, taxableIncome, personalAllowance) {
 
 
 function displayTaxBreakdown(incomeTaxBreakdown) {
-    const taxTableBody = document.querySelector('#taxBreakdownTable tbody');
+    const taxTableBody = document.querySelector('#tax-breakdown-table tbody');
     taxTableBody.innerHTML = '';
 
     function addRow(rate, yearly, monthly, weekly) {

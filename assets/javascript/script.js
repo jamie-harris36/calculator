@@ -52,6 +52,7 @@ function calculateTakeHomePay() {
     let takeHomePay = calculateTakeHomePayAmount(grossIncome, incomeTaxBreakdown.totalTax, nationalInsurance);
 
     displayResults(grossIncome, personalAllowance, taxableIncome, incomeTaxBreakdown.totalTax, nationalInsurance, takeHomePay);
+    displayTaxBreakdown(incomeTaxBreakdown);
 }
 
 
@@ -116,6 +117,34 @@ function calculateIncomeTax(grossIncome, taxableIncome, personalAllowance) {
         additionalRateTax: additionalRateTax,
         totalTax: basicRateTax + higherRateTax + additionalRateTax
     };
+}
+
+
+function displayTaxBreakdown(incomeTaxBreakdown) {
+    const taxTableBody = document.querySelector('#taxBreakdownTable tbody');
+    taxTableBody.innerHTML = '';
+
+    function addRow(rate, yearly, monthly, weekly) {
+        const row = `
+            <tr>
+                <td>${rate}</td>
+                <td>${formatCurrency(yearly)}</td>
+                <td>${formatCurrency(monthly)}</td>
+                <td>${formatCurrency(weekly)}</td>
+            </tr>
+        `;
+        taxTableBody.insertAdjacentHTML('beforeend', row);
+    }
+
+    if (incomeTaxBreakdown.basicRateTax > 0) {
+        addRow("Tax at 20%", incomeTaxBreakdown.basicRateTax, incomeTaxBreakdown.basicRateTax / 12, incomeTaxBreakdown.basicRateTax / 52);
+    }
+    if (incomeTaxBreakdown.higherRateTax > 0) {
+        addRow("Tax at 40%", incomeTaxBreakdown.higherRateTax, incomeTaxBreakdown.higherRateTax / 12, incomeTaxBreakdown.higherRateTax / 52);
+    }
+    if (incomeTaxBreakdown.additionalRateTax > 0) {
+        addRow("Tax at 45%", incomeTaxBreakdown.additionalRateTax, incomeTaxBreakdown.additionalRateTax / 12, incomeTaxBreakdown.additionalRateTax / 52);
+    }
 }
     
 

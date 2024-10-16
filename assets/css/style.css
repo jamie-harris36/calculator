@@ -156,6 +156,10 @@ button:hover {
     transition: opacity 0.3s ease;
 }
 
+.show {
+    animation: fade-in 250ms forwards;
+}
+
 .visible {
     animation: fade-in 750ms forwards;
 }

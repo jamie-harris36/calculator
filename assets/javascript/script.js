@@ -22,6 +22,17 @@ window.addEventListener('click', function(event) {
 });
 
 
+// Code to show the 'Breakdown' link only when tax is above zero
+function showBreakdown(totalTax) {
+    const taxBreakdown = document.getElementById('tax-breakdown');
+    if (totalTax > 0) {
+        taxBreakdown.style.display = 'inline';
+    } else {
+        taxBreakdown.style.display = 'none';
+    }
+}
+
+
 // Code to show the modal when the 'Breakdown' link is clicked
 function showModal() {
     const modal = document.getElementById('tax-modal');
@@ -53,6 +64,8 @@ function calculateTakeHomePay() {
 
     displayResults(grossIncome, personalAllowance, taxableIncome, incomeTaxBreakdown.totalTax, nationalInsurance, takeHomePay);
     displayTaxBreakdown(incomeTaxBreakdown);
+
+    showBreakdown(incomeTaxBreakdown.totalTax);
 }
 
 

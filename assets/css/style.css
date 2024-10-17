@@ -147,7 +147,7 @@
     #tax-breakdown {
         text-transform: uppercase;
         font-size: 70%;
-        display: inline;
+        display: none;
     }
 
     .hidden {

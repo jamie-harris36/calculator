@@ -49,6 +49,16 @@
         cursor: pointer;
     }
 
+    #alert {
+        color: #d00000;
+        font-size: 14px;
+        display: block;
+        opacity: 0;
+        text-align: center;
+        margin-top: -15px;
+        margin-bottom: 8px;
+    }
+
     .container {
         background-color: #fff;
         padding: 20px 40px;

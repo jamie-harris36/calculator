@@ -51,8 +51,12 @@ function closeModal() {
 function calculateTakeHomePay() {
     const grossIncome = parseFloat(document.getElementById('gross-income').value);
     if (isNaN(grossIncome) || grossIncome <= 0) {
-        alert('Please enter a valid gross income.');
+        const alert = document.getElementById('alert');
+        alert.style.opacity = '1';
         return;
+    } else {
+        const alert = document.getElementById('alert');
+        alert.style.opacity = '0';
     }
 
     // Code to combine all following functions together to create the main function

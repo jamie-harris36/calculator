@@ -142,10 +142,9 @@ There is also a 404 page for when a user lands on a page that doesn't exist, or 
 #### **Colour & Design**
 I didn't really use a colour scheme as such, because I intended the design to be quite bland, I've only used basic colours. With the exception of the two blue colours for the submit button, and the colour for the table heading cells, I've only used black and white.
 
-With that being said, here are the colours I mainly used throughout the project
+With that being said, here are the colours I mainly used throughout the project:
 
-![Main Colour Pallette](assets/images/colour-pallette.png)
-
+![Main Colour Palette](assets/images/colour-palette.png)
 
 - - -
 #### **Fonts**
@@ -162,11 +161,26 @@ I felt these fonts would give a professional look which I believe to be fitting 
 ## Technologies Used
 
 ### Languages
-
+* [HTML5](https://en.wikipedia.org/wiki/HTML5)
+* [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 - - -
 ### Tools
-
+* [Git](https://git-scm.com/)
+    * Used for version control via Visual Studio Code by using the terminal to Push to GitHub.
+* [GitHub](https://github.com/)
+    * Used to store the project code after being created in Visual Studio Code and Pushed via Git.
+* [Visual Studio Code](https://code.visualstudio.com/)
+    * Used to create, edit and preview the projects code.
+* [Balsamiq](https://balsamiq.com/)
+    * Used to build and develop the wireframes.
+* [Canva](https://www.canva.com/)
+    * Used to design the colour palette image.
+* [Am I Responsive?](https://ui.dev/amiresponsive)
+    * Used to create the website mockup image.
+* [Remove BG](remove.bg)
+    * Used to add a transparent background to the mockup image.
 
 - - -
 ## Features

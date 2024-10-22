@@ -140,12 +140,23 @@ There is also a 404 page for when a user lands on a page that doesn't exist, or 
 
 - - -
 #### **Colour & Design**
+I didn't really use a colour scheme as such, because I intended the design to be quite bland, I've only used basic colours. With the exception of the two blue colours for the submit button, and the colour for the table heading cells, I've only used black and white.
+
+With that being said, here are the colours I mainly used throughout the project
+
+![Main Colour Pallette](assets/images/colour-pallette.png)
 
 
 - - -
 #### **Fonts**
+Within my font family, I used the following fonts.
+* Segoe UI (Main font)
+* Tahoma (backup)
+* Geneva (backup)
+* Verdana (backup)
+* sans-serif (backup)
 
-
+I felt these fonts would give a professional look which I believe to be fitting to the theme of a financial app. I didn't believe using a fun and exciting looking font would be suitable for an app such as this one.
 
 - - -
 ## Technologies Used

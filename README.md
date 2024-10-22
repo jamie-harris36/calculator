@@ -1,6 +1,6 @@
 # PAYE Take-Home Pay Calculator
 
-![Mock-up](insert mock up image here)
+![Mock-up](assets/images/mockup.png)
 
 #### **By Jamie Harris**
 [Click here to view the live web application](https://jamie-harris36.github.io/calculator/)

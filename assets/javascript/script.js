@@ -137,10 +137,12 @@ function calculateIncomeTax(grossIncome, taxableIncome, personalAllowance) {
 }
 
 
+// Code to calculate and display income tax breakdown
 function displayTaxBreakdown(incomeTaxBreakdown) {
     const taxTableBody = document.querySelector('#tax-breakdown-table tbody');
     taxTableBody.innerHTML = '';
 
+    // This function adds an empty table to the modal, with yearly, monthly and weekly values.
     function addRow(rate, yearly, monthly, weekly) {
         const row = `
             <tr>
@@ -153,6 +155,7 @@ function displayTaxBreakdown(incomeTaxBreakdown) {
         taxTableBody.insertAdjacentHTML('beforeend', row);
     }
 
+    // This part actually calculates the amounts that are in each tax bracket, and only shows the relevant tax brackets.
     if (incomeTaxBreakdown.basicRateTax > 0) {
         addRow("Tax at 20%", incomeTaxBreakdown.basicRateTax, incomeTaxBreakdown.basicRateTax / 12, incomeTaxBreakdown.basicRateTax / 52);
     }

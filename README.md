@@ -201,22 +201,93 @@ I felt these fonts would give a professional look which I believe to be fitting 
 
 - - -
 ### 404 Page
-
-
+* This 404 page is what the user will land on if they navigate to a non-existant part of the site, or if they incorrectly type the URL.
+* This 404 page provides a positive user experience, as the standard 'GitHub Pages' 404 page doesn't match the theme of this site, and doesn't have a link to the home page, giving bad UX.
+* This page has a similar design as the rest of the site, so users don't feel like they've left the site.
+* There is a 'Back to Home' button, which will take the user back to the home page without use of the browsers 'back' button.
 
 - - -
 ## JavaScript Functionality
+This section will explain what happens in the JavaScript code as the user navigates through the calculator. There are comments in the JavaScript code that explain this too.
 
 ### Calculate Take-Home Pay using mathematics and formulae
 
-### Display Results Table
+<details><summary>Details</summary>
+
+* The user will enter their gross annual salary and then click on 'Calculate':
+    * If no amount is entered prior to pressing 'Calculate', an alert will appear prompting the user to enter a valid salary.
+    * If '0' or a negative number is entered prior to pressing 'Calculate', an alert will appear prompting the user to enter a valid salary.
+    * If a valid amount (a number over 0) is entered, that amount will be stored to be used in the results table that will subsequently be shown.
+
+* The 'Calculate' button will start the main JavaScript function that will calculate the take-home pay.
+    * The calculator will take the salary that's been entered, and will figure out the following:
+        * Gross Income: This value is simply taken from what the user has input.
+        * Personal Allowance: The standard personal allowance is £12,570. This decreases on incomes of over £100,000, which is explained later.
+        * Taxable Income: Taxable income is Gross salary, minus personal allowance.
+        * Income Tax: Income tax is taxed as the following:
+            * 20% on income between personal allowance and £50,270.
+            * 40% on income between £50,271 and £125,140.
+            * 45% on income over £125,140.
+            * 0% on income below £12,570.
+            * The total income tax is calculated by adding all of the amounts from each tax bracket together. Explained further below in the 'Income Tax Breakdown' section.
+        * National Insurance: National Insurance is calculated with the following:
+            * 8% on income between £12,571 and £50,270.
+            * 2% on income over £50,271.
+            * 0% on income below £12,570.
+            * The National Insurance calculation is simplified, and assumes that the user pays Class 1 National Insurance.
+        * Take-Home Pay: Calculated by taking Gross Income, and minusing Income Tax and National Insurance.
+    * The calculator will also figure out these values in different frequencies:
+        * Yearly: Each value will appear as is, because the user has inserted a yearly salary, yearly values are standard.
+        * Monthly: The monthly values are essentially the yearly values, divided by 12.
+        * Weekly: The weekly values are essentially the yearly values, divided by 52.
+</details>
+
+### Calculate Income Tax Breakdown
+
+<details><summary>Details</summary>
+
+* Before the calculator figures out the total income tax, it will calculate the tax breakdown.
+    * It will calculate how much will be taxed at 20%, how much at 40% and how much at 45%.
+    * Once these values are calculated, they will be added together to calculate the total income tax.
+</details>
 
 ### Format results into GBP (£) currency
 
-### Display Link To Tax Breakdown
+<details><summary>Details</summary>
+
+* Instead of displaying the results in strictly numerical values, the calculator will display the results in GBP (£) currency, meaning the results will always be rounded to two decimal places, for example, £3 will be £3.00, and 6.3358 will be £6.34. Seeing as this is a financial application, it made the most sense for the results to display this way.
+</details>
+
+### Calculate Personal Allowance
+
+<details><summary>Details</summary>
+
+* The personal allowance will usually be £12,570. Which means any income up to that amount is tax free.
+    * Any income over this amount will be the figure that shows up as 'Taxable Income'.
+    * So if income is below £12,570, then taxable income will always be £0.00, thus no tax is paid.
+* On incomes above £100,000, the personal allowance will decrease by £1 with every £2 that's earned above £100,000.
+    * This means that by the time income reaches £125,140, the personal allowance is completely gone, and ALL income is taxable.
+</details>
+
+### Display Results Table
+
+<details><summary>Details</summary>
+
+* When the 'Calculate' button has been pressed by the user, a table will display within the main container div and show the yearly, monthly and weekly results that have been previously figured out by the calculator.
+    * If the alert previously appeared and the user goes on to enter a valid amount, the alert will then disappear.
+    * If income tax is above 0, a small link with the anchor text 'BREAKDOWN' will appear by the 'Income Tax' row heading.
+    * If income tax is 0, then the breakdown link will not appear.
+</details>
 
 ### Display Tax Breakdown Modal
 
+<details><summary>Details</summary>
+
+* When the user clicks the 'Breakdown' link, a modal will appear.
+* The modal will display the yearly, monthly and weekly values of income tax that is paid.
+* The modal will display the relevant tax brackets which are paid. 
+* If tax is only paid within the 20% tax bracket, the 40% and 45% tax bracket rows do not display, as they're not relevant and it's pointless to show that the user is paying £0.00 in the 45% tax bracket.
+</details>
 
 - - -
 ## Testing & Bugs

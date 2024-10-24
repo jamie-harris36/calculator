@@ -355,6 +355,91 @@ This section will explain what happens in the JavaScript code as the user naviga
 - - -
 ## Testing & Bugs
 
+### Validation
+
+#### **HTML Validation**
+
+I ran the code through the [W3C HTML Validatior](https://validator.w3.org/).
+
+There were no errors as seen below.
+
+<details><summary>HTML Validation Final Results</summary>
+
+<img src="assets/images/validation/html-validator.png">
+
+*HTML final validator results*
+
+</details>
+
+#### **CSS Validation**
+
+I ran the code through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+
+There were no errors as seen below.
+
+<details><summary>CSS Validation Final Results</summary>
+
+<img src="assets/images/validation/css-validator.png">
+
+*CSS final validator results*
+
+</details>
+
+#### **JavaScript Validation**
+
+I ran the JavaScript code through [JSHint](https://jshint.com).
+
+There were no errors but there were quite a few warnings
+
+<details><summary>JavaScript Validation Warnings Page 1</summary>
+
+<img src="assets/images/validation/javascript-validator-page01.png">
+
+*JavaScript validation warnings, page 1.
+
+</details>
+
+<details><summary>JavaScript Validation Warnings Page 2</summary>
+
+<img src="assets/images/validation/javascript-validator-page02.png">
+
+*JavaScript validation warnings, page 2.
+
+</details>
+
+I eventually figured out that JSHint doesn't check ES6 JavaScript by default, so I added the following code to my JavaScript (just on JSHint, for validation purposes)
+
+<img src="assets/images/validation/jshint.png">
+
+This code told JSHint to validate the code with the ES6 version of JavaScript. Once I did this, I had no warnings in my code.
+
+<details><summary>JavaScript Validation Final Results</summary>
+
+<img src="assets/images/validation/javascript-validator-final.png">
+
+*JavaScript validator final results*
+
+</details>
+
+### Performance
+
+I ran the site through Google Chrome Dev Tools' Lighthouse to check performance levels.
+
+<details><summary>Main Page - Desktop</summary>
+
+<img src="assets/images/validation/lighthouse-results.png">
+
+*Main Page - Desktop*
+
+</details>
+
+<details><summary>Main Page - Mobile</summary>
+
+<img src="assets/images/validation/lighthouse-mobile.png">
+
+*Main Page - Mobile*
+
+</details>
 
 - - -
 ## Deployment

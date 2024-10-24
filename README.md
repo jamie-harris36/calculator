@@ -393,7 +393,12 @@ The project will now be cloned locally for you to use.
 
 ### Code
 
-
+* I used a few tutorials, from [W3Schools](https://www.w3schools.com) to assist me throughout this projects: 
+    * [JavaScript Math Object](https://www.w3schools.com/js/js_math.asp): Tutorials on math functions, specifically (Math.min & Math.max).
+    * [JavaScript HTML Dom EventListener](https://www.w3schools.com/js/js_htmldom_eventlistener.asp): Tutorial to get window event listener, to close modal when clicked outside the modal.
+    * [HTML DOM Element insertAdjacentHTML()](https://www.w3schools.com/jsref/met_node_insertadjacenthtml.asp): Tutorial to add row to table in modal.
+    * [JavaScript Number toLocaleString()](https://www.w3schools.com/jsref/jsref_tolocalestring_number.asp): Tutorial to turn number into string, for formatting results to currency.
+    * [HTML DOM Element textContent](https://www.w3schools.com/jsref/prop_node_textcontent.asp): Tutorial to return text content of all math calculations in table. 
 
 - - -
 ### Media

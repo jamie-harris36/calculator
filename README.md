@@ -187,20 +187,107 @@ I felt these fonts would give a professional look which I believe to be fitting 
 
 ### Calculator Section
 
-#### Input Section
+<details><summary>Screenshots</summary>
 
+<img src="assets/images/screenshots/main-screenshot.png">
 
-#### Calculate Button
+*Home Page*
 
+<img src="assets/images/screenshots/calculator-screenshot.png">
 
+*Calculator section, containing the input bar, label and submit button*
+
+<img src="assets/images/screenshots/error-alert-screenshot.png">
+
+*Error alert, when 0 or negative number is input*
+
+</details>
+
+* Layout is responsive, with margins and font sizes changing on smaller screens.
+* Salary input box
+    * User must enter a valid input to launch the calculator - alert will appear if no number, or amounts of 0 and under are entered.
+    * Users salary is displayed in the results, which will personalise the results.
+* Calculate Button - launches the calculator and displays the results
+    * Has a hover effect on non-touchscreen devices, with a smooth colour transition.
+
+- - -
 ### Results Section
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/screenshots/main-results-screenshot.png">
+
+*Main results table*
+
+<img src="assets/images/screenshots/results-screenshot01.png">
+
+*Results table with £32,000 salary input*
+
+<img src="assets/images/screenshots/tax-breakdown-screenshot01.png">
+
+*Close up of tax breakdown link, which is on displayed as tax is over £0.00*
+
+<img src="assets/images/screenshots/results-screenshot02.png">
+
+*Results table with £10,000 salary input*
+
+<img src="assets/images/screenshots/tax-breakdown-screenshot02.png">
+
+*Close up of tax breakdown link that's hidden as tax is at £0.00*
+
+<img src="assets/images/screenshots/results-screenshot03.png">
+
+*Results table of £150,000 salary input*
+
+<img src="assets/images/screenshots/personal-allowance-screenshot.png">
+
+*Close up of personal allowance, reduced to £0.00. Personal allowance is reduced on incomes over £100,000*
+
+</details>
+
+* When the data is input and the results table appears, this section gives yearly, monthly and weekly information about the following:
+    * Users gross salary (the yearly value will be what the user input into the calculator)
+    * Personal allowance
+    * Taxable income
+    * Income tax deductions (this is where the 'tax-breakdown' link will appear)
+    * National insurance deductions
+    * Take-home salary
+* The orignal calculator (input, label and button) still appears, so the user can insert another amount and get different results.
+* If tax is above 0, the aforementioned tax breakdown link will appear, prompting a tax breakdown modal to appear.
+
+- - -
+### Tax Breakdown Modal
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/screenshots/20-percent-modal.png">
+
+*Tax Breakdown modal, with 20% tax bracket displayed on income over £12,570. 40% and 45% amounts aren't shown as nothing is taxed at 40% or 45% here*
+
+<img src="assets/images/screenshots/40-percent-modal.png">
+
+*Tax Breakdown modal, with 20% and 40% tax brackets displayed, on income over £50,270. 45% amount isn't shown as nothing is taxed at 45% here*
+
+<img src="assets/images/screenshots/45-percent-modal.png">
+
+*Tax Breakdown modal, with 20%, 40% and 45% tax brackets displayed, on income over £125,140*
 
 
-#### Tax Breakdown Modal
+</details>
 
+* When the tax-breakdown link appears and is clicked, a pop-up modal will appear, displaying how the tax is broken down in different tax brackets.
+* Yearly, monthly and weekly values of this breakdown will be given.
+* Clicking on the 'x' or outside the modal will close the modal.
+* Only the relevant tax brackets will display, for example if no tax is paid at 40% and 45%, then only the 20% tax will display.s
 
 - - -
 ### 404 Page
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/screenshots/404-screenshot.png">
+
+*Content in the 404 error page. Same background image as the main page. Link to homepage is displayed.*
+
+</details>
+
 * This 404 page is what the user will land on if they navigate to a non-existant part of the site, or if they incorrectly type the URL.
 * This 404 page provides a positive user experience, as the standard 'GitHub Pages' 404 page doesn't match the theme of this site, and doesn't have a link to the home page, giving bad UX.
 * This page has a similar design as the rest of the site, so users don't feel like they've left the site.
@@ -211,9 +298,6 @@ I felt these fonts would give a professional look which I believe to be fitting 
 This section will explain what happens in the JavaScript code as the user navigates through the calculator. There are comments in the JavaScript code that explain this too.
 
 ### Calculate Take-Home Pay using mathematics and formulae
-
-<details><summary>Details</summary>
-
 * The user will enter their gross annual salary and then click on 'Calculate':
     * If no amount is entered prior to pressing 'Calculate', an alert will appear prompting the user to enter a valid salary.
     * If '0' or a negative number is entered prior to pressing 'Calculate', an alert will appear prompting the user to enter a valid salary.
@@ -240,54 +324,33 @@ This section will explain what happens in the JavaScript code as the user naviga
         * Yearly: Each value will appear as is, because the user has inserted a yearly salary, yearly values are standard.
         * Monthly: The monthly values are essentially the yearly values, divided by 12.
         * Weekly: The weekly values are essentially the yearly values, divided by 52.
-</details>
 
 ### Calculate Income Tax Breakdown
-
-<details><summary>Details</summary>
-
 * Before the calculator figures out the total income tax, it will calculate the tax breakdown.
     * It will calculate how much will be taxed at 20%, how much at 40% and how much at 45%.
     * Once these values are calculated, they will be added together to calculate the total income tax.
-</details>
 
 ### Format results into GBP (£) currency
-
-<details><summary>Details</summary>
-
 * Instead of displaying the results in strictly numerical values, the calculator will display the results in GBP (£) currency, meaning the results will always be rounded to two decimal places, for example, £3 will be £3.00, and 6.3358 will be £6.34. Seeing as this is a financial application, it made the most sense for the results to display this way.
-</details>
 
 ### Calculate Personal Allowance
-
-<details><summary>Details</summary>
-
 * The personal allowance will usually be £12,570. Which means any income up to that amount is tax free.
     * Any income over this amount will be the figure that shows up as 'Taxable Income'.
     * So if income is below £12,570, then taxable income will always be £0.00, thus no tax is paid.
 * On incomes above £100,000, the personal allowance will decrease by £1 with every £2 that's earned above £100,000.
     * This means that by the time income reaches £125,140, the personal allowance is completely gone, and ALL income is taxable.
-</details>
 
 ### Display Results Table
-
-<details><summary>Details</summary>
-
 * When the 'Calculate' button has been pressed by the user, a table will display within the main container div and show the yearly, monthly and weekly results that have been previously figured out by the calculator.
     * If the alert previously appeared and the user goes on to enter a valid amount, the alert will then disappear.
     * If income tax is above 0, a small link with the anchor text 'BREAKDOWN' will appear by the 'Income Tax' row heading.
     * If income tax is 0, then the breakdown link will not appear.
-</details>
 
 ### Display Tax Breakdown Modal
-
-<details><summary>Details</summary>
-
 * When the user clicks the 'Breakdown' link, a modal will appear.
 * The modal will display the yearly, monthly and weekly values of income tax that is paid.
 * The modal will display the relevant tax brackets which are paid. 
 * If tax is only paid within the 20% tax bracket, the 40% and 45% tax bracket rows do not display, as they're not relevant and it's pointless to show that the user is paying £0.00 in the 45% tax bracket.
-</details>
 
 - - -
 ## Testing & Bugs

@@ -185,6 +185,18 @@ I felt these fonts would give a professional look which I believe to be fitting 
 - - -
 ## Features
 
+### Favicon
+
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/screenshots/favicon-screenshot.png">
+
+*Favicon image shown on browser tab*
+
+</details>
+
+* I included a favicon for the site using a calculator image I found on a royalty free image website online (attribution made on HTML files). This helps to differenciate the tab from other tabs that are open in the browser.
+
 ### Calculator Section
 
 <details><summary>Screenshots</summary>

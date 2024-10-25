@@ -38,14 +38,14 @@ I wanted to ensure the website was easy to use, responsive, accessible and intui
 ### Project Goals
 
 #### **Project Purpose**
-A web-based calculator that allows users to input their annual salary, which will then display results on tax deductions, national insurance deductions and after tax (net) salary based on what amount the user inputs. 
+A web-based calculator that allows users to input their annual salary, which will then display results on tax deductions, national insurance deductions and after-tax (net) salary based on what amount the user inputs. 
 
 I would like to stress that I am not an accountant or a tax expert, and tax laws are very complicated, because of this these results won't always be 100% accurate. 
 
 They should be taken as rough estimations of take-home pay for entertainment and educational purposes, and not fully relied on to the exact amount. With that being said, the rates and thresholds for both income tax and national insurance, as well as the personal allowance, are accuarate as of the financial year of 2024/25.
 
 #### **Client Goals**
-This calculator was built as my second milestone project on my Level 5 Diploma in Web Application Development [Code Institute](https://codeinstitute.net/) as part of my interactive frontend development modules, and my first project where use of JavaScript is essential. Because of this, I didn't have a specific client.
+This calculator was built as my second milestone project on my Level 5 Diploma in Web Application Development by [Code Institute](https://codeinstitute.net/) as part of my interactive frontend development module, and my first project where use of JavaScript is essential. Because of this, I didn't have a specific client.
 
 However, to practice making my projects look professional, I treated this as a real-world application which could be used by banks or other financial institutes. This clients goals would be:
 * Engaging users with interactivity and providing them with a rough estimate on the users tax deductions and take-home pay.
@@ -69,7 +69,7 @@ I also compared the results between each of these calculators that's displayed w
 #### **The Salary Calculator**
 I really liked the layout of this calculator. I decided to simplify things though. This calculator let the user add certain options, such as inputting their own individual tax code, bonuses, pension contributions, salary sacrifice and more. 
 
-However I wanted the user to feel like they were using a much simpler calulation, where they'd just insert their annual salary and they'd get a rough but fairly accurate estimation on what their take-home salary would be. I also wanted the calculator to be simple enough to be displayed on the entire viewport without the user having to scroll down the page.
+However I wanted the user to feel like they were using a much simpler calulator, where they'd just insert their annual salary and they'd get a rough but fairly accurate estimation on what their take-home salary would be. I also wanted the calculator to be simple enough to be displayed on the entire viewport without the user having to scroll down the page.
 
 I also liked whenever I click on the 'Tax breakdown' link, a modal shows up with the yearly, monthly and weekly breakdowns of the amounts paid within the relevant tax bands, and I wanted to incorporate this into my project too.
 
@@ -87,7 +87,9 @@ Here are links to both [Income Tax Rates & Personal Allowances](https://www.gov.
 
 
 #### **Research of Peoples Salaries**
-I didn't want to be rude and ask for the salaries of my loved ones, but I did ask my partner, and my dad to use my calculator and tell me if their monthly take-home salary is close to the results that showed up. I did this so I knew whether my calculator was at least on the right track or not in terms of accuracy. I was satisfied to learn the results of the calculator closely matched their actual take-home salaries, although they will have other variables such as pension contributions, which I have omitted from my calculator as this is an optional deduction and the employee can opt out of pension contributions.
+I didn't want to be rude and ask for the salaries of my loved ones, but I did ask my partner, and my dad to use my calculator and tell me if their monthly take-home salary is close to the results that showed up. I did this so I knew whether my calculator was at least on the right track or not in terms of accuracy. 
+
+I was satisfied to learn the results of the calculator closely matched their actual take-home salaries, although they will have other variables such as pension contributions, which I have omitted from my calculator as that is an optional deduction and the employee can opt out of pension contributions.
 
 - - -
 ### Content
@@ -99,7 +101,7 @@ The calculator is made up of an input bar, where a user can input a numerical am
 * National Insurance Deductions
 * Take-Home Salary
 
-If the income tax amount is greater than 0, then a 'Tax Breakdown' link will appear, which will prompt a pop-up modal to appear, displaying the amount of tax that is paid under each tax bracket.
+If the income tax amount is greater than £0.00, then a 'Tax Breakdown' link will appear, which will prompt a pop-up modal to appear, displaying the amount of tax that is paid under each tax bracket.
 
 As I've said previously, because of how complicated tax brackets are, and peoples taxes are calculated differently depending on their own circumstances, this information shouldn't be totally relied on and should only be used for entertainment purposes. Any queries on your tax deductions should be taken up with your company's payroll department or a qualified accountant.
 
@@ -197,6 +199,7 @@ I felt these fonts would give a professional look which I believe to be fitting 
 
 * I included a favicon for the site using a calculator image I found on a royalty free image website online (attribution made on HTML files). This helps to differenciate the tab from other tabs that are open in the browser.
 
+- - -
 ### Calculator Section
 
 <details><summary>Screenshots</summary>
@@ -217,9 +220,9 @@ I felt these fonts would give a professional look which I believe to be fitting 
 
 * Layout is responsive, with margins and font sizes changing on smaller screens.
 * Salary input box
-    * User must enter a valid input to launch the calculator - alert will appear if no number, or amounts of 0 and under are entered.
+    * User must enter a valid input in order to run the calculator. When the user tries to run the calculator, an alert will appear if the input bar is left empty, or amounts of 0 and under are entered. Also if letters or other characters are entered.
     * Users salary is displayed in the results, which will personalise the results.
-* Calculate Button - launches the calculator and displays the results
+* Calculate Button - runs the calculator and displays the results
     * Has a hover effect on non-touchscreen devices, with a smooth colour transition.
 
 - - -
@@ -258,13 +261,13 @@ I felt these fonts would give a professional look which I believe to be fitting 
 
 * When the data is input and the results table appears, this section gives yearly, monthly and weekly information about the following:
     * Users gross salary (the yearly value will be what the user input into the calculator)
-    * Personal allowance
+    * Personal allowance (usually £12,570, unless income is over £100,000)
     * Taxable income
-    * Income tax deductions (this is where the 'tax-breakdown' link will appear)
+    * Income tax deductions (this is where the 'tax-breakdown' link will appear if tax is above £0.00)
     * National insurance deductions
     * Take-home salary
 * The orignal calculator (input, label and button) still appears, so the user can insert another amount and get different results.
-* If tax is above 0, the aforementioned tax breakdown link will appear, prompting a tax breakdown modal to appear.
+* If tax is above £0.00, the aforementioned tax breakdown link will appear, prompting a tax breakdown modal to appear.
 
 - - -
 ### Tax Breakdown Modal
@@ -288,7 +291,7 @@ I felt these fonts would give a professional look which I believe to be fitting 
 * When the tax-breakdown link appears and is clicked, a pop-up modal will appear, displaying how the tax is broken down in different tax brackets.
 * Yearly, monthly and weekly values of this breakdown will be given.
 * Clicking on the 'x' or outside the modal will close the modal.
-* Only the relevant tax brackets will display, for example if no tax is paid at 40% and 45%, then only the 20% tax will display.s
+* Only the relevant tax brackets will display, for example if no tax is paid at 40% and 45%, then only the 20% tax will display.
 
 - - -
 ### 404 Page
@@ -312,13 +315,13 @@ This section will explain what happens in the JavaScript code as the user naviga
 ### Calculate Take-Home Pay using mathematics and formulae
 * The user will enter their gross annual salary and then click on 'Calculate':
     * If no amount is entered prior to pressing 'Calculate', an alert will appear prompting the user to enter a valid salary.
-    * If '0' or a negative number is entered prior to pressing 'Calculate', an alert will appear prompting the user to enter a valid salary.
+    * If '0' or a negative number is entered prior to pressing 'Calculate', an alert will appear prompting the user to enter a valid salary. The same will happen if a letter or a character that isn't a number is input.
     * If a valid amount (a number over 0) is entered, that amount will be stored to be used in the results table that will subsequently be shown.
 
 * The 'Calculate' button will start the main JavaScript function that will calculate the take-home pay.
     * The calculator will take the salary that's been entered, and will figure out the following:
         * Gross Income: This value is simply taken from what the user has input.
-        * Personal Allowance: The standard personal allowance is £12,570. This decreases on incomes of over £100,000, which is explained later.
+        * Personal Allowance: The standard personal allowance is £12,570. This decreases on incomes of over £100,000. This is explained later.
         * Taxable Income: Taxable income is Gross salary, minus personal allowance.
         * Income Tax: Income tax is taxed as the following:
             * 20% on income between personal allowance and £50,270.
@@ -332,8 +335,8 @@ This section will explain what happens in the JavaScript code as the user naviga
             * 0% on income below £12,570.
             * The National Insurance calculation is simplified, and assumes that the user pays Class 1 National Insurance.
         * Take-Home Pay: Calculated by taking Gross Income, and minusing Income Tax and National Insurance.
-    * The calculator will also figure out these values in different frequencies:
-        * Yearly: Each value will appear as is, because the user has inserted a yearly salary, yearly values are standard.
+    * The calculator will also figure out these values in different pay frequencies (yearly, monthtly and weekly).
+        * Yearly: Each value will appear as is, because the user has inserted a yearly salary, yearly values are standard here.
         * Monthly: The monthly values are essentially the yearly values, divided by 12.
         * Weekly: The weekly values are essentially the yearly values, divided by 52.
 
@@ -355,8 +358,8 @@ This section will explain what happens in the JavaScript code as the user naviga
 ### Display Results Table
 * When the 'Calculate' button has been pressed by the user, a table will display within the main container div and show the yearly, monthly and weekly results that have been previously figured out by the calculator.
     * If the alert previously appeared and the user goes on to enter a valid amount, the alert will then disappear.
-    * If income tax is above 0, a small link with the anchor text 'BREAKDOWN' will appear by the 'Income Tax' row heading.
-    * If income tax is 0, then the breakdown link will not appear.
+    * If income tax is above £0.00, a small link with the anchor text 'BREAKDOWN' will appear by the 'Income Tax' row heading.
+    * If income tax is £0.00, then the breakdown link will not appear.
 
 ### Display Tax Breakdown Modal
 * When the user clicks the 'Breakdown' link, a modal will appear.
@@ -401,7 +404,7 @@ There were no errors as seen below.
 
 I ran the JavaScript code through [JSHint](https://jshint.com).
 
-There were no errors but there were quite a few warnings
+There were no errors but there were quite a few warnings.
 
 <details><summary>JavaScript Validation Warnings Page 1</summary>
 
@@ -419,7 +422,7 @@ There were no errors but there were quite a few warnings
 
 </details>
 
-I eventually figured out that JSHint doesn't check ES6 JavaScript by default, so I added the following code to my JavaScript (just on JSHint, for validation purposes)
+I eventually figured out that JSHint doesn't check ES6 JavaScript by default, so I added the following code to my JavaScript (just on JSHint, for validation purposes).
 
 <img src="assets/images/validation/jshint.png">
 
@@ -482,7 +485,7 @@ The site was tested on the following browsers:
 * Microsoft Edge
 
 - - -
-### Testing Results Table
+### Testing Results
 
 #### **General Testing**
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
@@ -562,7 +565,7 @@ The project will now be cloned locally for you to use.
     * [JavaScript Math Object](https://www.w3schools.com/js/js_math.asp): Tutorials on math functions, specifically (Math.min & Math.max).
     * [JavaScript HTML Dom EventListener](https://www.w3schools.com/js/js_htmldom_eventlistener.asp): Tutorial to get window event listener, to close modal when clicked outside the modal.
     * [HTML DOM Element insertAdjacentHTML()](https://www.w3schools.com/jsref/met_node_insertadjacenthtml.asp): Tutorial to add row to table in modal.
-    * [JavaScript Number toLocaleString()](https://www.w3schools.com/jsref/jsref_tolocalestring_number.asp): Tutorial to turn number into string, for formatting results to currency.
+    * [JavaScript Number toLocaleString()](https://www.w3schools.com/jsref/jsref_tolocalestring_number.asp): Tutorial to turn number into string, for formatting results into currency.
     * [HTML DOM Element textContent](https://www.w3schools.com/jsref/prop_node_textcontent.asp): Tutorial to return text content of all math calculations in table. 
 
 - - -

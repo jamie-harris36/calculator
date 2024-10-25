@@ -442,6 +442,74 @@ I ran the site through Google Chrome Dev Tools' Lighthouse to check performance 
 </details>
 
 - - -
+### Testing User Stories
+
+I tested the site based on my user stories:
+
+| No. | User Goal | How is it achieved? |
+| :--- | :--- | :--- |
+| 1 | I want to get a rough idea on what my take-home pay would be, based on my annual gross salary. | The results section of the calculator contains lots of information about how much Income Tax and National Insurance will be deducted, as well as how much of your income is taxable, what your personal allowance will be (if you're on a higher salary) and what your take-home pay will be. |
+| 2 | I want to see how much tax I'm likely to pay and how that's broken down into different tax brackets. | If you earn enough money to pay any income tax, the 'Tax Breakdown' pop-up modal will display a breakdown of what tax you pay. You will see how much you will pay within the 20% tax bracket, how much you will pay in the 40% tax bracket, and the 45% tax bracket. If you only pay within the 20% tax bracket, then the 20% tax row is all you will see. |
+| 3 | I want to see a monthly salary, as I am paid monthly and a yearly take-home salary isn't really relevant. | The results section of the calculator and the tax breakdown modal will show Yearly, Monthly and Weekly values, so it's relevant to employees that are paid monthly and weekly. |
+| 4 | I want to access this calculator on any device, as I have multiple devices and want the option to use this calculator on a smaller screen if need be. | This calculator has been designed to be fully responsive, so it can be used on desktops, tablets and mobiles, and has been tested on each device. |
+
+- - -
+### Responsiveness/Device Testing
+
+The site was tested on the following devices:
+* Samsung Galaxy A15
+* Samsung Galaxy S8+
+* iPad Pro
+* Surface Pro 7
+* HP Laptop 15s
+* Google Chrome Developer Tools - simulator for all different device options as well as using the adjustable sizing options.
+
+The site was tested on the following browsers:
+* Google Chrome
+* Mozilla Firefox
+* Microsoft Edge
+
+- - -
+### Testing Results Table
+
+#### **General Testing**
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Home Page | Layout is fully responsive on calculator div, results table and modal | Checked on various browsers and devices including Google Dev Tools | All elements were fully responsive on all devices and browsers that were tested | Pass |
+| Favicon | Appears in browser tab | Checked browser tabs in different browsers and devices | Favicon appeared as expected | Pass |
+| Console | No errors appear in console while the calculator is used | Checked console in Dev Tools during calculations | Console logged no errors | Pass |
+| 404 Error Page | User to land on 404 page when directed to non-existent page | Intentionally navigated to non-existent page by typing random characters on the end of the URL | Directs to 404 Error page as expected | Pass |
+| 404 Error Page | 'Back to Home' button takes user back to home page | Clicked the 'Back to Home' button | Directs back to home page as expected | Pass |
+
+#### **Main Calculator Testing**
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Salary input | Allows user to input a number | Inputting a number | User is able to input a number | Pass |
+| Calculate Button | Hover effect with transition on hover | Hovered on Calculate button | Hover effect worked as expected | Pass |
+| Calculate Button | Opens results table underneath main calculator input section | Input valid salary and clicked Calculate | Table appeared as expected | Pass |
+| Error message appearing | Message to appear when invalid amount is input | Inputting 0, a negative number, a letter and blank input into the input bar and clicking the Calculate button | The error message appeared as expected | Pass |
+| Error message disappearing | Message to disappear when a valid amount is input | Inputting a number greater than 0 into the input and clicking the Calculate button | The error message disappeared as expected | Pass |
+
+#### **Results Table Testing**
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Calculations | All results use the correct mathematics | Input a salary into the calculator, then manually subtract the deductions to make sure they match with the actual results that show | Works as expected | Pass |
+| Fade-in Animation | Results table to fade in as it opens | Run the calculator as normal | Fade-in animation works as expected | Pass |
+| Personal Allowance | Reduces under £12,570 on incomes greater than £100,000. Goes to £0.00 on incomes of £125,140 or over | Insert various incomes greater than £100,000 | Personal allowance changes as expected | Pass |
+| Tax Breakdown Link | Appears when income tax is greater than 0 | Insert an income over £12,570 into the input box then clicking Calculate (this ensures income tax will be greater than 0) | Breakdown link appears as expected | Pass |
+| Tax Breakdown Link | Clicking this will open the modal to appear | Click the 'Breakdown' link | Modal opens as expected | Pass |
+
+#### **Modal Testing**
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Breakdown Results | Tax breakdown results to appear with correct mathmatics applied | Opened the modal and manually added each tax bracket together to see if the total matches with the total income tax on the main results table | Results appear and correct as expected | Pass |
+| Fade-in Animation | Modal to fade in as it opens | Open the modal as normal | Fade-in animation works as expected | Pass |
+| Table rows | Only rows for the relevant tax brackets will show up | Input various salaries into the calculator, where 20%, 40% and 45% tax brackets will be used | Only the relevant tax bracket row will display, for example, if not taxed at 40% and 45%, then only the 20% tax bracket row will display | Pass |
+| Close Button | Hover effect on the close button | Hovered on close button | Close button changes colour on hover as expected | Pass |
+| Close Button | Closes the modal when clicked/pressed | Clicked on/pressed the close button | Modal closes as expected | Pass |
+| Outside Modal | Closes the modal when user clicks/presses outside modal area | Clicked/pressed outside the modal area | Modal closes as expected | Pass |
+
+- - -
 ## Deployment
 
 ### Github Pages
